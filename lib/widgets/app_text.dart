@@ -6,6 +6,7 @@ class CustomTextWidget extends StatelessWidget {
   final Color color;
   final double fontSize;
   final int? maxLines;
+  final double? height;
   final FontWeight fontWeight;
   final TextAlign textAlign;
   final TextDecoration textDecoration;
@@ -20,7 +21,7 @@ class CustomTextWidget extends StatelessWidget {
     this.fontWeight = FontWeight.normal,
     this.textAlign = TextAlign.start,
     this.textDecoration = TextDecoration.none,
-    this.shadows
+    this.shadows, this.height
   }) : super(key: key);
 
   @override
@@ -31,6 +32,7 @@ class CustomTextWidget extends StatelessWidget {
       overflow: maxLines != null ? TextOverflow.ellipsis : null,
       textAlign: textAlign,
       style: GoogleFonts.poppins(
+        height: height,
           decoration: textDecoration,
           color: color,
           fontSize: fontSize,

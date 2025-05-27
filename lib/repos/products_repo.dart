@@ -20,7 +20,7 @@ class ProductsRepoModel {
   static List<ProductsRepoModel> sliderList = [
     ProductsRepoModel(
       name: "Oxford Shirt",
-      image: "assets/images/m1.jpg",
+      image: "assets/images/room.jpeg",
       price: 40,
       brandName: "Classic Fit",
       selectedSize: "M",
@@ -28,7 +28,7 @@ class ProductsRepoModel {
     ),
     ProductsRepoModel(
       name: "Flannel Shirt",
-      image: "assets/images/m2.png",
+      image: "assets/images/room.jpeg",
       price: 35,
       brandName: "Cozy Layers",
       selectedSize: "L",
@@ -36,7 +36,7 @@ class ProductsRepoModel {
     ),
     ProductsRepoModel(
       name: "Denim Jacket",
-      image: "assets/images/m3.jpg",
+      image: "assets/images/room.jpeg",
       price: 65,
       brandName: "Urban Edge",
       selectedSize: "L",
@@ -44,7 +44,7 @@ class ProductsRepoModel {
     ),
     ProductsRepoModel(
       name: "Puffer Jacket",
-      image: "assets/images/m4.jpg",
+      image: "assets/images/room.jpeg",
       price: 80,
       brandName: "Winter Warm",
       selectedSize: "XL",
@@ -52,7 +52,7 @@ class ProductsRepoModel {
     ),
     ProductsRepoModel(
       name: "Plaid Shirt",
-      image: "assets/images/m5.jpg",
+      image: "assets/images/room.jpeg",
       price: 30,
       brandName: "Casual Comfort",
       selectedSize: "M",
@@ -60,7 +60,7 @@ class ProductsRepoModel {
     ),
     ProductsRepoModel(
       name: "Leather Jacket",
-      image: "assets/images/m6.jpg",
+      image: "assets/images/room.jpeg",
       price: 120,
       brandName: "Moto Style",
       selectedSize: "L",

@@ -41,6 +41,7 @@ dependencies:
   animate_do: ^3.3.4
   carousel_slider: ^5.0.0
   flutter_svg: ^2.1.0
+  flutter_rating: ^2.0.2
 
 
 dev_dependencies:

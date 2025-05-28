@@ -1,4 +1,5 @@
 import 'package:animated_listview/views/home/home_screen.dart';
+import 'package:animated_listview/views/root/root_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         statusBarBrightness: Brightness.dark));
     return ResponsiveSizer(builder: (context, orientation, screenType) {
       return  MaterialApp(
-          home: HomeScreen(),
+          home: RootScreen(),
           debugShowCheckedModeBanner: false
       );
     });

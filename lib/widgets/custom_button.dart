@@ -1,3 +1,4 @@
+import 'package:animated_listview/widgets/app_text.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -32,16 +33,14 @@ class CustomButton extends StatelessWidget {
           height: height,
           alignment: Alignment.center,
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Text(
-            text,
-            style: TextStyle(
+          child: CustomTextWidget(
+           title:  text,
               color: textColor,
               fontSize: 16,
               fontWeight: FontWeight.w600,
             ),
           ),
         ),
-      ),
     );
   }
 }

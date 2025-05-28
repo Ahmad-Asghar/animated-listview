@@ -4,6 +4,7 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import '../../../common/app/const/app_colors.dart';
 import '../../../common/app/const/app_images.dart';
 import '../../../widgets/app_text.dart';
+import '../../../widgets/round_button.dart';
 class HomeAppbar extends StatelessWidget {
   const HomeAppbar({super.key});
 
@@ -55,20 +56,7 @@ class HomeAppbar extends StatelessWidget {
               Stack(
                 alignment: Alignment.topRight,
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: AppColors.lightGreyColor
-                    ),
-                    height: 25.sp,
-                    width: 25.sp,
-                    child: Center(
-                      child: SvgPicture.asset(
-                        height: 26,
-                        AppImages.notification,
-                      ),
-                    ),
-                  ),
+                  RoundButton(iconImage: AppImages.notification, onTap: () {  },),
                   CircleAvatar(
                     radius: 6.5,
                     backgroundColor: Colors.red,

@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:animated_listview/views/home/widgets/home_appbar.dart';
 import 'package:animated_listview/views/home/widgets/recently_added_widget.dart';
 import 'package:animated_listview/views/home/widgets/search_bar.dart';
@@ -44,8 +46,8 @@ class HomeScreen extends StatelessWidget {
 
                   Navigator.of(context).push(
                     PageRouteBuilder(
-                      transitionDuration: Duration(milliseconds: 700), // slow hero animation duration
-                      reverseTransitionDuration: Duration(milliseconds: 700), // slow on pop as well
+                      transitionDuration: Duration(milliseconds: 700),
+                      reverseTransitionDuration: Duration(milliseconds: 700),
                       pageBuilder: (context, animation, secondaryAnimation) => DetailsScreen(
                         itemModel: ProductsRepoModel.sliderList[index],
                         startSize: size,
@@ -53,16 +55,38 @@ class HomeScreen extends StatelessWidget {
                         index: index,
                       ),
                       transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                        return FadeTransition(
-                          opacity: animation.drive(
-                            Tween(begin: 0, end: 1),
-                          ),
-                          child: child,
+                        return Stack(
+                          children: [
+                            // The blurred background (current screen)
+                            BackdropFilter(
+                              filter: ImageFilter.blur(
+                                sigmaX: animation.value * 100,
+                                sigmaY: animation.value * 100,
+                              ),
+                              child: Container(
+                                color: Colors.black.withOpacity(animation.value * 0.2),
+                              ),
+                            ),
+
+                            // The actual transitioning screen (DetailsScreen)
+                            FadeTransition(
+                              opacity: animation.drive(
+                                TweenSequence([
+                                  TweenSequenceItem(
+                                    tween: Tween(begin: 0.0, end: 1.0)
+                                        .chain(CurveTween(curve: Curves.easeInOut)),
+                                    weight: 100,
+                                  ),
+                                ]),
+                              ),
+                              child: child,
+                            ),
+                          ],
                         );
                       },
-
                     ),
                   );
+
                 },
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

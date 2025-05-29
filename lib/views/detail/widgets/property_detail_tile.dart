@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 import '../../../common/app/const/app_colors.dart';
@@ -15,8 +16,8 @@ class PropertyDetailTile extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          CustomTextWidget(title: title,color: AppColors.greyTextColor,),
-          CustomTextWidget(title: description,),
+          FadeInLeft(child: CustomTextWidget(title: title,color: AppColors.greyTextColor,)),
+          FadeInRight(child: CustomTextWidget(title: description,)),
         ],
       ),
     );
